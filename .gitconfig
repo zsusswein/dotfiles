@@ -1,0 +1,8 @@
+[core]
+	excludesfile = /Users/zsusswein/.gitignore
+[user]
+	name = Zachary Susswein
+	email = zsusswein@rockfound.org
+[alias]
+	graph = log --all --graph --decorate --oneline
+
