@@ -118,4 +118,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Set up dotfiles to be tracked in a bare Github repo called dotfiles
+# Follows from this tutorial: https://www.atlassian.com/git/tutorials/dotfiles
 alias dotfiles='/usr/bin/git --git-dir=/Users/zsusswein/.mydotfiles/ --work-tree=/Users/zsusswein'
