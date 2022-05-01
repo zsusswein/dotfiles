@@ -21,6 +21,8 @@ Plug 'psf/black', { 'branch': 'stable' }
 Plug 'neomake/neomake'
 Plug 'eigenfoo/stan-vim'
 Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 			
@@ -81,6 +83,15 @@ set hlsearch
 
 " Map leader n to open NerdTree
 nnoremap <leader>n :NERDTree<CR>
+
+" Map Ctrl-f to fuzzy search for files from within vim
+nnoremap <silent> <C-f> :Files<CR>
+
+" Map <Leader>f to use ripgrep to search within files
+nnoremap <silent> <Leader>f :Rg<CR>
+
+" And remap standard vim-grep to use ripgrep instead
+ set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 
 " Set options for neomake linting appearance time
 call neomake#configure#automake('nw', 750)
