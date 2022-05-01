@@ -124,7 +124,6 @@ alias dotfiles='/usr/bin/git --git-dir=/Users/zsusswein/.mydotfiles/ --work-tree
 
 # Set up fuzzy matching with fzf and have it default to ripgrep
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-Copy
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m'
