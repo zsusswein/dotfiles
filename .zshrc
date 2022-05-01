@@ -121,3 +121,11 @@ unset __conda_setup
 # Set up dotfiles to be tracked in a bare Github repo called dotfiles
 # Follows from this tutorial: https://www.atlassian.com/git/tutorials/dotfiles
 alias dotfiles='/usr/bin/git --git-dir=/Users/zsusswein/.mydotfiles/ --work-tree=/Users/zsusswein'
+
+# Set up fuzzy matching with fzf and have it default to ripgrep
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+Copy
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m'
+fi
