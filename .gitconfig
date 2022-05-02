@@ -2,9 +2,14 @@
 	excludesfile = /Users/zsusswein/.gitignore
 [user]
 	name = Zachary Susswein
-	email = zsusswein@rockfound.org
+	email = zsusswein@gmail.com
 [alias]
 	graph = log --all --graph --decorate --oneline
+	st = status -sb
+	cm = commit -m
+	se = !git rev-list --all | xargs git grep
 
 [fetch]
 	prune = true
+[help]
+	autocorrect = 20
