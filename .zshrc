@@ -128,3 +128,7 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m'
 fi
+
+# Alias a longform version of ls to use human readable units and be sorted by
+# the date most recently accessed
+alias lt='ls -lAtuhG'
