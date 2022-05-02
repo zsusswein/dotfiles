@@ -7,7 +7,7 @@
 	graph = log --all --graph --decorate --oneline
 	st = status -sb
 	cm = commit -m
-	se = !git rev-list --all | xargs git grep
+	se = !git rev-list --all | xargs git grep -F
 
 [fetch]
 	prune = true
