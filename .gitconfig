@@ -1,5 +1,6 @@
 [core]
 	excludesfile = /Users/zsusswein/.gitignore
+	editor = vim
 [user]
 	name = Zachary Susswein
 	email = zsusswein@gmail.com
