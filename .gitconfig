@@ -13,3 +13,5 @@
 	prune = true
 [help]
 	autocorrect = 20
+[pull]
+	ff = only
