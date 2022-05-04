@@ -41,5 +41,9 @@
 	followTags = true
 
 [init]
-
 	defaultBranch = main
+
+[grep]
+	lineNumber = true
+
+
