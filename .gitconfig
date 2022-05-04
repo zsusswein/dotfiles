@@ -1,17 +1,43 @@
 [core]
 	excludesfile = /Users/zsusswein/.gitignore
+    # Make `git rebase` safer on macOS.
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+    trustctime = false
+
 [user]
 	name = Zachary Susswein
 	email = zsusswein@gmail.com
+
 [alias]
-	graph = log --all --graph --decorate --oneline
+    graph = log --all --graph --decorate --oneline
 	st = status -sb
 	cm = commit -m
 	se = !git rev-list --all | xargs git grep -F
+    ca = !git add -A && git commit -av
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch --all
+    remotes = remote --verbose
+    # Remove branches that have already been merged with main.
+	# a.k.a. ‘delete merged’
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 [fetch]
 	prune = true
 [help]
-	autocorrect = 20
+	autocorrect = 1
 [pull]
 	ff = only
+[branch]
+    # Show the most recently changed branches first.
+    sort = -committerdate
+
+[push]
+
+    # https://git-scm.com/docs/git-config#git-config-pushdefault
+	default = simple
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+[init]
+
+	defaultBranch = main
