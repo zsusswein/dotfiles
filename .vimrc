@@ -103,5 +103,8 @@ set path+=**
 " Display all matching files when tab completing
 set wildmenu
 
+" Set vim clipboard to be the same as the system clipboard
+set clipboard=unnamed
+
 " Set options for neomake linting appearance time
 call neomake#configure#automake('nw', 750)
