@@ -82,11 +82,9 @@ set hlsearch
 " Map leader n to open NerdTree
 nnoremap <leader>n :NERDTree<CR>
 
-" Map <Leader>f to use ripgrep to search within files
-nnoremap <silent> <Leader>f :Rg<CR>
-
 " And remap standard vim-grep to use ripgrep instead
- set grepprg=rg\ --vimgrep\ --smart-case\ --follow
+ set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --no-heading
+ set grepformat=%f:%l:%c:%m,%f:%l:%m
 
 " Search down into subfolders
 " Provides tab completion for folder-related tasks
