@@ -49,6 +49,11 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" Track indentation of previous line, but also react to the syntax of the code
+" being written
+set autoindent
+set smartindent
+
 " Don't be vi compatible
 set nocompatible
 
