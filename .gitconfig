@@ -1,5 +1,7 @@
 [core]
 	excludesfile = /Users/zsusswein/.gitignore
+    # Make rebase safe on OSX
+    # https://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
     trustctime = false
 	editor = vim
 
