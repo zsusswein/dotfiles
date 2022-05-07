@@ -35,7 +35,8 @@ let g:black_linelength = 79
 " Set the options for Airline theme 
 let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
+" f/p/file-name.js
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved' 
 
 
 " Ceate mapping to allow newline without leaving normal mode
@@ -78,6 +79,10 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
+
+" And hit return again after a match to clear highlighting
+" Use <silent> to avoid triggering flash
+:nnoremap <silent> <CR> :nohlsearch<CR>
 
 " Map leader n to open NerdTree
 nnoremap <leader>n :NERDTree<CR>
