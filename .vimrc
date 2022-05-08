@@ -38,6 +38,11 @@ let g:airline#extensions#tabline#enabled = 1
 " f/p/file-name.js
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved' 
 
+" Set general settings
+
+
+" Set line numbers
+set number
 
 " Ceate mapping to allow newline without leaving normal mode
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
@@ -59,7 +64,6 @@ set nocompatible
 " Set line length
 set wrap
 set textwidth=79
-set formatoptions=qrn1
 set colorcolumn=85
 
 " UTF-8 text encoding by default
@@ -105,5 +109,11 @@ set wildmenu
 " Set vim clipboard to be the same as the system clipboard
 set clipboard=unnamed
 
+" Set text formatting to auto-wrap text, inserting the current comment leader
+" automatically, but not including the comment leader when hitting enter or 'o'
+" in normal mode. Also, allow for automatic list formatting.
+" http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
+set fo=tcqwan1
+set fo-=cro
 " Set options for neomake linting appearance time
 call neomake#configure#automake('nw', 750)
