@@ -63,7 +63,7 @@ set nocompatible
 
 " Set line length
 set wrap
-set textwidth=79
+set textwidth=78
 set colorcolumn=85
 
 " UTF-8 text encoding by default
