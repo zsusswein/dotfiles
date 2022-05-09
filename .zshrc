@@ -118,6 +118,22 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Deactivates conda before running brew. 
+# Re-activates conda if it was active upon completion.
+# Conda plays poorly with brew and brew doctor complains if in a conda
+# environment.
+
+brew() {
+    local conda_env="$CONDA_DEFAULT_ENV"
+    while [ "$CONDA_SHLVL" -gt 0  ]; do
+        conda deactivate
+    done
+    command brew $@
+    local brew_status=$?
+    [ -n "${conda_env:+x}" ] && conda activate "$conda_env"
+    return "$brew_status"
+}
+
 # Set up dotfiles to be tracked in a bare Github repo called dotfiles
 # Follows from this tutorial: https://www.atlassian.com/git/tutorials/dotfiles
 alias dotfiles='/usr/bin/git --git-dir=/Users/zsusswein/.mydotfiles/ --work-tree=/Users/zsusswein'
