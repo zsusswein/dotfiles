@@ -1,5 +1,7 @@
 [core]
 	excludesfile = /Users/zsusswein/.gitignore
+    # Make rebase safe on OSX
+    # https://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
     trustctime = false
 	editor = vim
 
@@ -18,8 +20,11 @@
 	branches = branch --all
     remotes = remote --verbose
     # Remove branches that have already been merged with main.
-	# a.k.a. ‘delete merged’
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+    # a.k.a. ‘delete merged’
+    # Currently set to delete only the most recently merged branch
+	dm = "!git branch --sort=-committerdate --merged | grep -v '\\*' | head -1 |  xargs -n 1 git branch -d"
+    # Remove local and remote branch
+    nuke = !sh -c 'git branch -d $1 && git push origin :$1' -
 
 [fetch]
 	prune = true

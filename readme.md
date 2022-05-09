@@ -1,7 +1,9 @@
 ## .files
 My dotfiles. This structure is taken from [the excellent
 walkthrough](https://www.atlassian.com/git/tutorials/dotfiles) written 
-up by Nicola Paolucci on the Atlassian blog.
+up by Nicola Paolucci on the Atlassian blog. Unlike the walkthrough's
+suggestion to use `.cfg` as the folder for the repository, I use `.mydotfiles`
+and, consequently, the alias `dotfiles` rather than `config`.
 
 ### Files
 

@@ -35,8 +35,14 @@ let g:black_linelength = 79
 " Set the options for Airline theme 
 let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
+" f/p/file-name.js
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved' 
 
+" Set general settings
+
+
+" Set line numbers
+set number
 
 " Ceate mapping to allow newline without leaving normal mode
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
@@ -48,13 +54,16 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" Track indentation of previous line, but also react to the syntax of the code
+" being written
+set autoindent
+
 " Don't be vi compatible
 set nocompatible
 
 " Set line length
 set wrap
 set textwidth=79
-set formatoptions=qrn1
 set colorcolumn=85
 
 " UTF-8 text encoding by default
@@ -79,6 +88,10 @@ set incsearch
 set showmatch
 set hlsearch
 
+" And hit return again after a match to clear highlighting
+" Use <silent> to avoid triggering flash
+:nnoremap <silent> <CR> :nohlsearch<CR>
+
 " Map leader n to open NerdTree
 nnoremap <leader>n :NERDTree<CR>
 
@@ -93,5 +106,14 @@ set path+=**
 " Display all matching files when tab completing
 set wildmenu
 
+" Set vim clipboard to be the same as the system clipboard
+set clipboard=unnamed
+
+" Set text formatting to auto-wrap text, inserting the current comment leader
+" automatically, but not including the comment leader when hitting enter or 'o'
+" in normal mode. Also, allow for automatic list formatting.
+" http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
+set fo=tcqwan1
+set fo-=cro
 " Set options for neomake linting appearance time
 call neomake#configure#automake('nw', 750)
