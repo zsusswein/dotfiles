@@ -1,53 +1,26 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+####################
+# ZSH options
+####################
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
 # just remind me to update when it's time
 zstyle ':omz:update' mode reminder  
-
-# Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
-
 HIST_STAMPS="mm/dd/yyyy"
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git ripgrep python )
-
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 export EDITOR='vim'
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+####################
+# Plugins
+####################
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-# Load the oh-my-zsh's library.
+plugins=(git ripgrep python )
+
+####################
+# Conda
+####################
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -79,6 +52,10 @@ brew() {
     [ -n "${conda_env:+x}" ] && conda activate "$conda_env"
     return "$brew_status"
 }
+
+####################
+# Aliases
+####################
 
 # Set up dotfiles to be tracked in a bare Github repo called dotfiles
 # Follows from this tutorial: https://www.atlassian.com/git/tutorials/dotfiles
