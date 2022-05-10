@@ -51,6 +51,7 @@ brew() {
     local brew_status=$?
     [ -n "${conda_env:+x}" ] && conda activate "$conda_env"
     return "$brew_status"
+}
 
 ####################
 # Aliases
