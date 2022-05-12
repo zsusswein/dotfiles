@@ -66,6 +66,10 @@ set wrap
 set textwidth=78
 set colorcolumn=85
 
+" Highlight right margin (>80 chars) in light grey 
+highlight ColorColumn ctermbg=235
+let &colorcolumn=join(range(81,999),",")
+
 " UTF-8 text encoding by default
 set encoding=utf-8
 
