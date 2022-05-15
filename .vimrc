@@ -66,6 +66,10 @@ set wrap
 set textwidth=78
 set colorcolumn=85
 
+" Prevent wrapping from breaking words
+set linebreak
+set nolist
+
 " UTF-8 text encoding by default
 set encoding=utf-8
 
