@@ -40,6 +40,20 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " Set general settings
 
+" Turn on spell check
+augroup spellcheck 
+    autocmd!
+    autocmd FileType markdown setlocal spell 
+    autocmd BufRead,BufNewFile *.md setlocal spell 
+    autocmd Filetype gitcommmit setlocal spell
+    inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+augroup END
+
+" Set spellfile to a consistent location to be version controlled
+set spellfile=$HOME/.vim-spell-en.utf-8.add
+
+" Autocomplete with dictionary words when spell check is on
+set complete+=kspell
 
 " Set line numbers
 set number
@@ -54,8 +68,8 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-" Track indentation of previous line, but also react to the syntax of the code
-" being written
+" Track indentation of previous line, but also react to the syntax of 
+" the code being written
 set autoindent
 
 " Don't be vi compatible
@@ -67,7 +81,6 @@ set textwidth=78
 set colorcolumn=85
 
 " Prevent wrapping from breaking words
-set linebreak
 set nolist
 
 " Highlight right margin (>80 chars) in light grey 
@@ -83,8 +96,8 @@ set visualbell
 " more powerful backspacing
 set backspace=indent,eol,start  
 
-" If searching all lowercase, search case-insensitive. If any characters are 
-" uppercase, search case-sensitive.
+" If searching all lowercase, search case-insensitive. If any 
+" characters are uppercase, search case-sensitive.
 set ignorecase
 set smartcase
 
