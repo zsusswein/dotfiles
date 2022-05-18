@@ -52,3 +52,5 @@
 	lineNumber = true
 
 
+[color]
+	ui = true
