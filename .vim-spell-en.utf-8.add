@@ -7,3 +7,17 @@ gitignore
 vimrc
 gitconfig
 zsh
+grey/!
+UTF-8/!
+PlugInstall/!
+grey
+UTF-8
+PlugInstall
+neomake
+js
+spellfile/!
+spellfile
+Autocomplete
+NerdTree
+ripgrep
+subfolders
