@@ -1,6 +1,6 @@
-
-" Map comma to leader
-:let mapleader = ","
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin loading
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -23,11 +23,16 @@ Plug 'eigenfoo/stan-vim'
 Plug 'preservim/nerdtree'
 
 call plug#end()
-			
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set plugin options
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set neomake options for linting
 let g:neomake_python_enabled_makers = ['pylint']
+
+" Set options for neomake linting appearance time
+call neomake#configure#automake('nw', 750)
 
 " Set options for Black formatter
 let g:black_linelength = 79
@@ -38,7 +43,23 @@ let g:airline#extensions#tabline#enabled = 1
 " f/p/file-name.js
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved' 
 
-" Set general settings
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Leader specific settings
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Map comma to leader
+:let mapleader = ","
+
+" Map leader n to open NerdTree
+nnoremap <leader>n :NERDTree<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" General settings
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""
+" Spelling
+""""""""""""""""""""
 
 " Turn on spell check
 set spell spelllang=en_us
@@ -54,6 +75,10 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
+
+""""""""""""""""""""
+" Line settings
+""""""""""""""""""""
 
 " Set line numbers
 set number
@@ -72,9 +97,6 @@ set expandtab
 " the code being written
 set autoindent
 
-" Don't be vi compatible
-set nocompatible
-
 " Set line length
 set wrap
 set textwidth=78
@@ -87,14 +109,16 @@ set nolist
 highlight ColorColumn ctermbg=235
 let &colorcolumn=join(range(81,999),",")
 
-" UTF-8 text encoding by default
-set encoding=utf-8
+" Set text formatting to auto-wrap text, inserting the current comment leader
+" automatically, but not including the comment leader when hitting enter or 'o'
+" in normal mode. Also, allow for automatic list formatting.
+" http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
+set fo=tcqwan1
+set fo-=cro
 
-" Turn off audio bell and set as visual
-set visualbell
-
-" more powerful backspacing
-set backspace=indent,eol,start  
+""""""""""""""""""""
+" Search
+""""""""""""""""""""
 
 " If searching all lowercase, search case-insensitive. If any 
 " characters are uppercase, search case-sensitive.
@@ -117,16 +141,17 @@ set hlsearch
 nnoremap N Nzz
 nnoremap n nzz
 
-" Map leader n to open NerdTree
-nnoremap <leader>n :NERDTree<CR>
+" Search down into subfolders
+" Provides tab completion for folder-related tasks
+set path+=**
 
 " And remap standard vim-grep to use ripgrep instead
  set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --no-heading
  set grepformat=%f:%l:%c:%m,%f:%l:%m
 
-" Search down into subfolders
-" Provides tab completion for folder-related tasks
-set path+=**
+""""""""""""""""""""
+" Miscellaneous
+""""""""""""""""""""
 
 " Display all matching files when tab completing
 set wildmenu
@@ -134,11 +159,14 @@ set wildmenu
 " Set vim clipboard to be the same as the system clipboard
 set clipboard=unnamed
 
-" Set text formatting to auto-wrap text, inserting the current comment leader
-" automatically, but not including the comment leader when hitting enter or 'o'
-" in normal mode. Also, allow for automatic list formatting.
-" http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
-set fo=tcqwan1
-set fo-=cro
-" Set options for neomake linting appearance time
-call neomake#configure#automake('nw', 750)
+" UTF-8 text encoding by default
+set encoding=utf-8
+
+" Don't be vi compatible
+set nocompatible
+
+" Turn off audio bell and set as visual
+set visualbell
+
+" more powerful backspacing
+set backspace=indent,eol,start  
