@@ -113,6 +113,10 @@ set hlsearch
 " Use <silent> to avoid triggering flash
 :nnoremap <silent> <CR> :nohlsearch<CR>
 
+" When toggling between search results, center those results in the window
+nnoremap N Nzz
+nnoremap n nzz
+
 " Map leader n to open NerdTree
 nnoremap <leader>n :NERDTree<CR>
 
