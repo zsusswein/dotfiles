@@ -13,7 +13,8 @@ What this repository contains (for now):
 - *.gitignore*: My top level ignores.
 - *.vimrc*: The vim plugins and mappings I use
 - *.gitconfig*: My git signing configuration and aliases
-- *.vim-spell-en.utf-8.add*: My vim dictionary for spellchecking
+- *.vim-spell-en.utf-8.add*: My vim dictionary add ons to include in
+  spellchecking
 
 I'm not yet totally happy with my settings in the above files. Once I get happy
 with my versioning and package handling, I'll probably start to add in some of
