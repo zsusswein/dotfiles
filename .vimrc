@@ -41,13 +41,13 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " Set general settings
 
 " Turn on spell check
-augroup spellcheck 
-    autocmd!
-    autocmd FileType markdown setlocal spell 
-    autocmd BufRead,BufNewFile *.md setlocal spell 
-    autocmd Filetype gitcommmit setlocal spell
-    inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-augroup END
+set spell spelllang=en_us
+
+" Specify colors for spellcheck
+highlight SpellBad ctermbg=001 " Dark red
+highlight SpellRare ctermbg=140  " Light purple
+highlight SpellLocal ctermbg=068 " Light blue 
+highlight SpellCap ctermbg=222 " Dark green 
 
 " Set spellfile to a consistent location to be version controlled
 set spellfile=$HOME/.vim-spell-en.utf-8.add
@@ -58,7 +58,7 @@ set complete+=kspell
 " Set line numbers
 set number
 
-" Ceate mapping to allow newline without leaving normal mode
+" Create mapping to allow newline without leaving normal mode
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
 
