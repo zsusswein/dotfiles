@@ -35,3 +35,6 @@ Session.vim
 
 # Don't track SQL databases
 *.db
+
+# Logging should be ignored
+*/log/
