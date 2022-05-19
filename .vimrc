@@ -71,7 +71,7 @@ highlight SpellLocal ctermbg=068 " Light blue
 highlight SpellCap ctermbg=222 " Dark green 
 
 " Map Leader-L to go back to last misspelled word and pick first suggestion.
-" But set an under marker so that hitting `u` will undo the word and jump back
+" But set an undo marker so that hitting `u` will undo the word and jump back
 inoremap <leader>L <C-G>u<Esc>[s1z=`]a<C-G>u
 
 " Select last misspelled word (typing will edit).
