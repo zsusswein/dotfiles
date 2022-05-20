@@ -72,14 +72,14 @@ highlight SpellCap ctermbg=222 " Dark green
 
 " Map Leader-L to go back to last misspelled word and pick first suggestion.
 " But set an undo marker so that hitting `u` will undo the word and jump back
-inoremap <leader>L <C-G>u<Esc>[s1z=`]a<C-G>u
+inoremap <leader>l <C-G>u<Esc>[s1z=`]a<C-G>u
 
 " Select last misspelled word (typing will edit).
 " Best used for short words because vim's built in spellcheck performs poorly
 " on these
-nnoremap <leader>K <Esc>[sve<C-G>
-inoremap <leader>K <Esc>[sve<C-G>
-snoremap <leader>K <Esc>b[sviw<C-G>
+nnoremap <leader>k <Esc>[sve<C-G>
+inoremap <leader>k <Esc>[sve<C-G>
+snoremap <leader>k <Esc>b[sviw<C-G>
 
 " Set spellfile to a consistent location to be version controlled
 set spellfile=$HOME/.vim-spell-en.utf-8.add
