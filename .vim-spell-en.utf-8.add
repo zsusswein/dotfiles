@@ -22,10 +22,11 @@ NerdTree
 ripgrep
 subfolders
 Github
-repo
+#epo
 https
 www
 atlassian
+<<<<<<< HEAD
 Susswein
 Params
 params
@@ -47,3 +48,21 @@ vectorized
 param
 stackexchange
 slope
+Conda
+init
+py
+bioinformatic
+PPI
+Miniconda
+sra
+Homebrew
+repo/!
+munge
+metadata
+COVID
+GISAID
+notational
+covariance
+interpretability
+multinomial
+interpretable

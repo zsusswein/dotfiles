@@ -1,21 +1,40 @@
+# R history and setup files
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
-.DS_Store
-.vscode
 .Rhistory
+.Rproj.user/
 .Rapp.history
 .RData
 .Ruserdata
 ./*.Rcheck/
-.Rproj.user/
-.httr-oath
+.Renviron
+
+# Mac specific-files
+.DS_Store
+
+# Don't save OAuth tokens
+.httr-oauth
 *_cache/
 /cache/
+
+# Don't save markdown byproducts
 *.utf8.md
 *.knit.md
-.Renviron
+
+# Don't save vim version control
 Session.vim
-.httr-oauth
+*.swp
+
+# Don't track version controlled dotfiles in normal version control
 .mydotfiles
+
+# Don't track IDE-specific files
+.vscode
+
+# Don't track SQL databases
+*.db
+
+# Logging should be ignored
+*/log/

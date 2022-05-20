@@ -16,7 +16,15 @@ export EDITOR='vim'
 # Plugins
 ####################
 
-plugins=(git ripgrep python )
+plugins=(git ripgrep python colored-man-pages vi-mode)
+
+####################
+# Plugin-specific settings
+####################
+
+VI_MODE_SET_CURSOR=true
+
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 ####################
 # Conda
@@ -67,7 +75,7 @@ alias dot='/usr/bin/git --git-dir=/Users/zsusswein/.mydotfiles/ --work-tree=/Use
 alias lt='ls -lAtuhG'
 
 # Alias to commit spellfile with newly added words
-alias dotspell='dot add .vim-spell-en.utf-8.add; dot commit -m "Update spellfile with new words"'
+alias dotspell='dot add ~/.vim-spell-en.utf-8.add; dot commit -m "Update spellfile with new words"'
 
 # Grep among .py files
 # This overwrites the default zsh python plugin pygrep alias to use ripgrep 

@@ -1,4 +1,11 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""
+" Leader specific settings
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Map comma to leader
+:let mapleader = ","
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin loading
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -43,13 +50,6 @@ let g:airline#extensions#tabline#enabled = 1
 " f/p/file-name.js
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved' 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Leader specific settings
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Map comma to leader
-:let mapleader = ","
-
 " Map leader n to open NerdTree
 nnoremap <leader>n :NERDTree<CR>
 
@@ -70,11 +70,24 @@ highlight SpellRare ctermbg=140  " Light purple
 highlight SpellLocal ctermbg=068 " Light blue 
 highlight SpellCap ctermbg=222 " Dark green 
 
+" Map Leader-L to go back to last misspelled word and pick first suggestion.
+" But set an undo marker so that hitting `u` will undo the word and jump back
+inoremap <leader>l <C-G>u<Esc>[s1z=`]a<C-G>u
+
+" Select last misspelled word (typing will edit).
+" Best used for short words because vim's built in spellcheck performs poorly
+" on these
+nnoremap <leader>k <Esc>[sve<C-G>
+inoremap <leader>k <Esc>[sve<C-G>
+snoremap <leader>k <Esc>b[sviw<C-G>
+
 " Set spellfile to a consistent location to be version controlled
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
+
+set spellsuggest='fast'
 
 """"""""""""""""""""
 " Line settings
