@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Map comma to leader
-:let mapleader = ","
+let mapleader = ","
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin loading
@@ -58,6 +58,31 @@ nnoremap <leader>n :NERDTree<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""
+" Miscellaneous
+""""""""""""""""""""
+
+" Display all matching files when tab completing
+set wildmenu
+
+" Set vim clipboard to be the same as the system clipboard
+set clipboard=unnamed
+
+" UTF-8 text encoding by default
+set encoding=utf-8
+
+" Don't be vi compatible
+set nocompatible
+
+" Turn off audio bell and set as visual
+set visualbell
+
+" more powerful backspacing
+set backspace=indent,eol,start  
+
+" Set files with ".md" extension to be of type markdown
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+""""""""""""""""""""
 " Spelling
 """"""""""""""""""""
 
@@ -84,8 +109,11 @@ snoremap <leader>k <Esc>b[sviw<C-G>
 " Set spellfile to a consistent location to be version controlled
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 
-" Autocomplete with dictionary words when spell check is on
-set complete+=kspell
+" If in a markdown file, autocomplete with dictionary words when 
+" spell check is on
+if &filetype ==# 'markdown'
+  setlocal complete+=kspell
+endif
 
 set spellsuggest="fast"
 
@@ -162,24 +190,3 @@ set path+=**
  set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --no-heading
  set grepformat=%f:%l:%c:%m,%f:%l:%m
 
-""""""""""""""""""""
-" Miscellaneous
-""""""""""""""""""""
-
-" Display all matching files when tab completing
-set wildmenu
-
-" Set vim clipboard to be the same as the system clipboard
-set clipboard=unnamed
-
-" UTF-8 text encoding by default
-set encoding=utf-8
-
-" Don't be vi compatible
-set nocompatible
-
-" Turn off audio bell and set as visual
-set visualbell
-
-" more powerful backspacing
-set backspace=indent,eol,start  
