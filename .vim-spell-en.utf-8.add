@@ -22,7 +22,7 @@ NerdTree
 ripgrep
 subfolders
 Github
-repo
+#epo
 https
 www
 atlassian
@@ -35,3 +35,13 @@ PPI
 Miniconda
 sra
 Homebrew
+repo/!
+munge
+metadata
+COVID
+GISAID
+notational
+covariance
+interpretability
+multinomial
+interpretable
