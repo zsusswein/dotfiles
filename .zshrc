@@ -1,4 +1,18 @@
 ####################
+# Plugins
+####################
+
+plugins=(git ripgrep python colored-man-pages vi-mode)
+
+####################
+# Plugin-specific settings
+####################
+
+VI_MODE_SET_CURSOR=true
+
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+
+####################
 # ZSH options
 ####################
 
@@ -12,19 +26,6 @@ HIST_STAMPS="mm/dd/yyyy"
 source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 
-####################
-# Plugins
-####################
-
-plugins=(git ripgrep python colored-man-pages vi-mode)
-
-####################
-# Plugin-specific settings
-####################
-
-VI_MODE_SET_CURSOR=true
-
-VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 ####################
 # Conda
@@ -81,6 +82,5 @@ alias dotspell='dot add ~/.vim-spell-en.utf-8.add; dot commit -m "Update spellfi
 # This overwrites the default zsh python plugin pygrep alias to use ripgrep 
 # instead.
 alias pygrep='rg -n --type py'
-
 
 
