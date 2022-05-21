@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Map comma to leader
-:let mapleader = ","
+let mapleader = ","
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin loading
@@ -27,22 +27,26 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'neomake/neomake'
 Plug 'eigenfoo/stan-vim'
-Plug 'preservim/nerdtree'
-
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Set plugin options
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Set neomake options for linting
-let g:neomake_python_enabled_makers = ['pylint']
+""""""""""""""""""""
+" Neomake
+""""""""""""""""""""
 
+" Set neomake options for Python so that shows only pylint and not also pep8
+let g:neomake_python_enabled_makers = ['pylint']
 " Set options for neomake linting appearance time
 call neomake#configure#automake('nw', 750)
-
 " Set options for Black formatter
 let g:black_linelength = 79
+
+""""""""""""""""""""
+" Airline
+""""""""""""""""""""
 
 " Set the options for Airline theme 
 let g:airline_theme='wombat'
@@ -50,12 +54,49 @@ let g:airline#extensions#tabline#enabled = 1
 " f/p/file-name.js
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved' 
 
-" Map leader n to open NerdTree
-nnoremap <leader>n :NERDTree<CR>
+""""""""""""""""""""
+" netrw
+""""""""""""""""""""
+
+" enable syntax and plugins (for netrw)
+syntax enable
+filetype plugin on
+" Tweaks for browsing
+let g:netrw_banner=0        " disable annoying banner
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " General settings
 """"""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""
+" Miscellaneous
+""""""""""""""""""""
+
+" Display all matching files when tab completing
+set wildmenu
+
+" Set vim clipboard to be the same as the system clipboard
+set clipboard=unnamed
+
+" UTF-8 text encoding by default
+set encoding=utf-8
+
+" Don't be vi compatible
+set nocompatible
+
+" Turn off audio bell and set as visual
+set visualbell
+
+" more powerful backspacing
+set backspace=indent,eol,start  
+
+" Set files with ".md" extension to be of type markdown
+autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 """"""""""""""""""""
 " Spelling
@@ -84,10 +125,13 @@ snoremap <leader>k <Esc>b[sviw<C-G>
 " Set spellfile to a consistent location to be version controlled
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 
-" Autocomplete with dictionary words when spell check is on
-set complete+=kspell
+" If in a markdown file, autocomplete with dictionary words when 
+" spell check is on
+if &filetype ==# 'markdown'
+  setlocal complete+=kspell
+endif
 
-set spellsuggest='fast'
+set spellsuggest="fast"
 
 """"""""""""""""""""
 " Line settings
@@ -126,6 +170,7 @@ let &colorcolumn=join(range(81,999),",")
 " automatically, but not including the comment leader when hitting enter or 'o'
 " in normal mode. Also, allow for automatic list formatting.
 " http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
+
 set fo=tcqwan1
 set fo-=cro
 
@@ -162,24 +207,3 @@ set path+=**
  set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --no-heading
  set grepformat=%f:%l:%c:%m,%f:%l:%m
 
-""""""""""""""""""""
-" Miscellaneous
-""""""""""""""""""""
-
-" Display all matching files when tab completing
-set wildmenu
-
-" Set vim clipboard to be the same as the system clipboard
-set clipboard=unnamed
-
-" UTF-8 text encoding by default
-set encoding=utf-8
-
-" Don't be vi compatible
-set nocompatible
-
-" Turn off audio bell and set as visual
-set visualbell
-
-" more powerful backspacing
-set backspace=indent,eol,start  
