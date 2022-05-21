@@ -131,8 +131,6 @@ if &filetype ==# 'markdown'
   setlocal complete+=kspell
 endif
 
-set spellsuggest="fast"
-
 """"""""""""""""""""
 " Line settings
 """"""""""""""""""""
