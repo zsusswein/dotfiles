@@ -157,6 +157,11 @@ set wrap
 set textwidth=78
 set colorcolumn=85
 
+" Deactivate line length/wrapping in bash because it's whitespace sensitive 
+if &filetype ==# 'sh'
+ set textwidth=500 
+endif
+
 " Prevent wrapping from breaking words
 set linebreak
 set nolist
