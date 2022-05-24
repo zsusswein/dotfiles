@@ -158,6 +158,7 @@ set textwidth=78
 set colorcolumn=85
 
 " Prevent wrapping from breaking words
+set linebreak
 set nolist
 
 " Highlight right margin (>80 chars) in light grey 
