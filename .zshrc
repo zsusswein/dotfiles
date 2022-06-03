@@ -67,9 +67,13 @@ brew() {
 
     local brew_status=$?
 
-    # If necessary, brew bundle dump
+    # If necessary, brew bundle dump and commit the changes
   for command in "${dump_commands[@]}"; do
-    [[ "${command}" == "${main_command}" ]] && brew bundle dump --file="${HOME}/.Brewfile" --force
+    [[ "${command}" == "${main_command}" ]] && \
+     brew bundle dump --file="${HOME}/.Brewfile" --force && \
+    dot add .Brewfile && \
+    dot add Brewfile.lock.json && \
+    dot cm "Update Brewfile"
   done
 
   # Turn the conda environment back on
