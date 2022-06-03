@@ -52,13 +52,29 @@ unset __conda_setup
 # environment.
 
 brew() {
+    # Save the local conda environment
     local conda_env="$CONDA_DEFAULT_ENV"
+    # Include all commands that should do a brew dump
+  local dump_commands=('install' 'uninstall') 
+  local main_command="${1}"
+
+  # Turn off the conda environment
     while [ "$CONDA_SHLVL" -gt 0  ]; do
         conda deactivate
     done
+
     command brew $@
+
     local brew_status=$?
+
+    # If necessary, brew bundle dump
+  for command in "${dump_commands[@]}"; do
+    [[ "${command}" == "${main_command}" ]] && brew bundle dump --file="${HOME}/.Brewfile" --force
+  done
+
+  # Turn the conda environment back on
     [ -n "${conda_env:+x}" ] && conda activate "$conda_env"
+
     return "$brew_status"
 }
 
