@@ -46,10 +46,27 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+####################
+# Aliases
+####################
+
+# Set up dotfiles to be tracked in a bare Github repository called dotfiles
+# Follows from this tutorial: https://www.atlassian.com/git/tutorials/dotfiles
+alias dotfiles='/usr/bin/git --git-dir=/Users/zsusswein/.mydotfiles/ --work-tree=/Users/zsusswein'
+alias dot='/usr/bin/git --git-dir=/Users/zsusswein/.mydotfiles/ --work-tree=/Users/zsusswein'
+
+# Alias a long form version of ls to use human readable units and be sorted by
+# the date most recently accessed
+alias lt='ls -lAtuhG'
+
+# Alias to commit spellfile with newly added words
+alias dotspell='dot add ~/.vim-spell-en.utf-8.add; dot commit -m "Update spellfile with new words"'
+
 # Deactivates conda before running brew. 
 # Re-activates conda if it was active upon completion.
 # Conda plays poorly with brew and brew doctor complains if in a conda
-# environment.
+# environment. Also sets brew to automatically update the Brewfile 
+# and commit the changes upon installing or uninstalling.
 
 brew() {
     # Save the local conda environment
@@ -71,8 +88,8 @@ brew() {
   for command in "${dump_commands[@]}"; do
     [[ "${command}" == "${main_command}" ]] && \
      brew bundle dump --file="${HOME}/.Brewfile" --force && \
-    dot add .Brewfile && \
-    dot add Brewfile.lock.json && \
+    dot add '~/.Brewfile' && \
+    dot add '~/Brewfile.lock.json' && \
     dot cm "Update Brewfile"
   done
 
@@ -82,21 +99,6 @@ brew() {
     return "$brew_status"
 }
 
-####################
-# Aliases
-####################
-
-# Set up dotfiles to be tracked in a bare Github repository called dotfiles
-# Follows from this tutorial: https://www.atlassian.com/git/tutorials/dotfiles
-alias dotfiles='/usr/bin/git --git-dir=/Users/zsusswein/.mydotfiles/ --work-tree=/Users/zsusswein'
-alias dot='/usr/bin/git --git-dir=/Users/zsusswein/.mydotfiles/ --work-tree=/Users/zsusswein'
-
-# Alias a long form version of ls to use human readable units and be sorted by
-# the date most recently accessed
-alias lt='ls -lAtuhG'
-
-# Alias to commit spellfile with newly added words
-alias dotspell='dot add ~/.vim-spell-en.utf-8.add; dot commit -m "Update spellfile with new words"'
 
 # Grep among .py files
 # This overwrites the default zsh python plugin pygrep alias to use ripgrep 
