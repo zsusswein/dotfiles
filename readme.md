@@ -18,6 +18,14 @@ What this repository contains (for now):
 - *.Brewfile*: My system dependencies installed through Homebrew
 - *Brewfile.lock.json*: The lockfile associated with the Brewfile
 
-I'm not yet totally happy with my settings in the above files. Once I get 
-happy with my versioning and package handling, I'll probably start to add in
-some of the files related to that too.
+I'm not yet totally happy with my settings in the above files. I'm currently 
+running both Homebrew and Anaconda, but they don't play nicely together. I'd 
+like to mature out of using Anaconda because it's frequently several versions 
+behind or infrequently updated (for Conda Forge), but I'm tied to using 
+a Conda implementation for work. As a result, the _.zshrc_ has a slightly 
+hacky alias to handle `brew install` in locations with conda environments 
+active.
+
+That said, I'm mostly happy with my vim and git setups. The next step will be 
+maturing my ability to do quick work in Python and R without firing up a whole 
+IDE. At the moment, it's still a little painful.
