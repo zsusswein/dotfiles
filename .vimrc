@@ -154,8 +154,8 @@ set expandtab
 set autoindent
 
 " Set line length
-set wrap
 set textwidth=78
+set wrap
 set colorcolumn=85
 
 " Deactivate line length/wrapping in bash because it's whitespace sensitive 
