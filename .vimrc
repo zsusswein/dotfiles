@@ -169,7 +169,7 @@ set nolist
 
 " Highlight right margin (>80 chars) in light grey 
 highlight ColorColumn ctermbg=235
-let &colorcolumn=join(range(81,999),",")
+let &colorcolumn=join(range(85,999),",")
 
 " Set text formatting to auto-wrap text, inserting the current comment leader
 " automatically, but not including the comment leader when hitting enter or 'o'
