@@ -90,7 +90,7 @@ brew() {
      brew bundle dump --file="${HOME}/.Brewfile" --force && \
     dot add '~/.Brewfile' && \
     dot add '~/Brewfile.lock.json' && \
-    dot cm "Update Brewfile"
+    dot cm "$@"
   done
 
   # Turn the conda environment back on
