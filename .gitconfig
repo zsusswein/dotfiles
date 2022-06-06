@@ -1,39 +1,39 @@
 [core]
-	excludesfile = /Users/zsusswein/.gitignore
+    excludesfile = /Users/zsusswein/.gitignore
     # Make rebase safe on OSX
     # https://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
     trustctime = false
-	editor = vim
+    editor = vim
 
 [user]
-	name = Zachary Susswein
-	email = zsusswein@gmail.com
+    name = Zachary Susswein
+    email = zsusswein@gmail.com
 
 [alias]
     graph = log --all --graph --decorate --oneline
-	st = status -sb
-	cm = commit -m
-	se = !git rev-list --all | xargs git grep -F
+    st = status -sb
+    cm = commit -m
+    se = !git rev-list --all | xargs git grep -F
     ca = !git add -A && git commit -av
-	# Show verbose output about tags, branches or remotes
-	tags = tag -l
-	branches = branch --all
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+    branches = branch --all
     remotes = remote --verbose
     # Remove branches that have already been merged with main.
     # a.k.a. ‘delete merged’
     # Currently set to delete only the most recently merged branch
-	dm = "!git branch --sort=-committerdate --merged | grep -v '*' | head -1 |  xargs -n 1 git branch -d"
+    dm = "!git branch --sort=-committerdate --merged | grep -v '*' | head -1 |  xargs -n 1 git branch -d"
     # Remove local and remote branch
     nuke = !sh -c 'git branch -d $1 && git push origin :$1' -
 
 [fetch]
-	prune = true
+    prune = true
 
 [help]
-	autocorrect = 1
+    autocorrect = 1
 
 [pull]
-	ff = only
+    ff = only
 
 [branch]
     # Show the most recently changed branches first.
@@ -41,16 +41,19 @@
 
 [push]
     #https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushdefault
-	default = current
-	# Make `git push` push relevant annotated tags when pushing branches out.
-	followTags = true
+    default = current
+    # Make `git push` push relevant annotated tags when pushing branches out.
+    followTags = true
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [grep]
-	lineNumber = true
-
+    lineNumber = true
 
 [color]
-	ui = true
+    ui = true
+[credential "https://github.com"]
+    helper = !/usr/local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+    helper = !/usr/local/bin/gh auth git-credential
