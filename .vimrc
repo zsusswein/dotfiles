@@ -21,13 +21,14 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 
 call plug#begin()
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'neomake/neomake'
 Plug 'eigenfoo/stan-vim'
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'sillybun/vim-repl'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -70,6 +71,14 @@ let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
+
+""""""""""""""""""""
+" vim-repl
+""""""""""""""""""""
+nnoremap <leader>r :REPLToggle<enter>
+let g:repl_program = {
+            \   'python': 'python3',
+            \   }
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " General settings
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,6 +107,9 @@ set backspace=indent,eol,start
 
 " Set files with ".md" extension to be of type markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+" Default to python3
+let g:pymode_python = 'python3'
 
 """"""""""""""""""""
 " Spelling
