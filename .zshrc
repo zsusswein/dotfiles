@@ -90,7 +90,7 @@ brew() {
      brew bundle dump --force --describe && \
      brew bundle --force && \
     dot add "$HOMEBREW_BUNDLE_FILE" && \
-    dot add "$OMEBREW_BUNDLE_FILE.lock.json" && \
+    dot add "$HOMEBREW_BUNDLE_FILE.lock.json" && \
     dot commit 
   done
 
