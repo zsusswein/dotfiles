@@ -29,6 +29,7 @@ Plug 'eigenfoo/stan-vim'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'sillybun/vim-repl'
 Plug 'davidhalter/jedi-vim'
+Plug 'tpope/vim-surround' 
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -38,9 +39,9 @@ call plug#end()
 """"""""""""""""""""
 " Neomake
 """"""""""""""""""""
-
 " Set neomake options for Python so that shows only pylint and not also pep8
 let g:neomake_python_enabled_makers = ['pylint']
+let g:neomake_python_pylint_args = ['--output-format=text', '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg} [{msg_id}]"', '--reports=no', '--good-names=x,y', '--include-naming-hint=y']
 " Set options for neomake linting appearance time
 call neomake#configure#automake('nw', 750)
 " Set options for Black formatter
@@ -49,7 +50,6 @@ let g:black_linelength = 79
 """"""""""""""""""""
 " Airline
 """"""""""""""""""""
-
 " Set the options for Airline theme 
 let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
@@ -59,7 +59,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 """"""""""""""""""""
 " netrw
 """"""""""""""""""""
-
 " enable syntax and plugins (for netrw)
 syntax enable
 filetype plugin on
@@ -71,14 +70,19 @@ let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
-
 """"""""""""""""""""
 " vim-repl
 """"""""""""""""""""
-nnoremap <leader>r :REPLToggle<enter>
+nnoremap <leader>t :REPLToggle<enter>
 let g:repl_program = {
             \   'python': 'python3',
             \   }
+
+""""""""""""""""""""
+" jedi-vim
+""""""""""""""""""""
+let g:jedi#show_call_signatures = "1" " Show function call signature in a popup
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " General settings
 """"""""""""""""""""""""""""""""""""""""""""""""""
