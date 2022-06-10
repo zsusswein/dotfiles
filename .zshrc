@@ -25,7 +25,7 @@ ENABLE_CORRECTION="true"
 HIST_STAMPS="mm/dd/yyyy"
 source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
-
+export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
 
 ####################
 # Conda
@@ -87,9 +87,10 @@ brew() {
     # If necessary, brew bundle dump and commit the changes
   for command in "${dump_commands[@]}"; do
     [[ "${command}" == "${main_command}" ]] && \
-     brew bundle dump --file="${HOME}/.Brewfile" --force && \
-    dot add "${HOME}/.Brewfile" && \
-    dot add "${HOME}/Brewfile.lock.json" && \
+     brew bundle dump --force --describe && \
+     brew bundle --force && \
+    dot add "$HOMEBREW_BUNDLE_FILE" && \
+    dot add "$OMEBREW_BUNDLE_FILE.lock.json" && \
     dot commit 
   done
 
