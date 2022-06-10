@@ -80,7 +80,11 @@ SARS-CoV-2
 BDA3
 conda
 Brewfile
-usr/bin/env python3
 snakefile
 snakemake
 bioinformatics
+covariate
+MLE
+_a priori_
+if/!
+if
