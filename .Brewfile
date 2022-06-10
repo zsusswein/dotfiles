@@ -18,3 +18,5 @@ brew "shellcheck"
 brew "tldr"
 # Vi 'workalike' with many additional features
 brew "vim"
+# Download YouTube videos from the command-line
+brew "youtube-dl"
