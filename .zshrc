@@ -90,7 +90,7 @@ brew() {
      brew bundle dump --file="${HOME}/.Brewfile" --force && \
     dot add "${HOME}/.Brewfile" && \
     dot add "${HOME}/Brewfile.lock.json" && \
-    dot commit -m "$*"
+    dot commit 
   done
 
   # Turn the conda environment back on
