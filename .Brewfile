@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
+brew "black"
 brew "gh"
 brew "pre-commit"
 brew "pylint"
