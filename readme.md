@@ -29,3 +29,25 @@ active.
 That said, I'm mostly happy with my vim and git setups. The next step will be 
 maturing my ability to do quick work in Python and R without firing up a whole 
 IDE. At the moment, it's still a little painful.
+
+## Setting up a new system
+
+The Atlassian tutorial explains how to perform this setup, but I think it's 
+also worth preserving here. 
+
+Set the dotfiles alias and clone the repository as a bare repository:
+```
+dotfiles='/usr/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME'
+git clone --bare https://github.com/zsusswein/dotfiles.git $HOME/.mydotfiles
+```
+
+As a side note, I'm still not quite sure why it needs to be a bare repository.  
+Figuring that out is on my to do list!
+
+Then, check out the contents of the bare repository and set it not to show 
+untracked files:
+```
+dotfiles checkout
+dotfiles config --local status.showUntrackedFiles no
+```
+Done!
