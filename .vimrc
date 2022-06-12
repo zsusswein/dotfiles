@@ -7,7 +7,7 @@ let mapleader = ","
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin loading
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -225,6 +225,6 @@ nnoremap n nzz
 set path+=**
 
 " And remap standard vim-grep to use ripgrep instead
- set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --no-heading
- set grepformat=%f:%l:%c:%m,%f:%l:%m
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --no-heading
+set grepformat=%f:%l:%c:%m,%f:%l:%m
 
