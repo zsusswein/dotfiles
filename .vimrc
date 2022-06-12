@@ -30,11 +30,30 @@ Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'sillybun/vim-repl'
 Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-surround' 
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Set plugin options
 """"""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""
+" Airline
+""""""""""""""""""""
+" Only show the tail of the git branch: 'feature/foo' becomes 'foo'
+let g:airline#extensions#branch#format = 1
+" Allow vim-fugitive to show VCS status airline
+let g:airline#extensions#branch#enabled = 1
+" Turn off the warning section
+let g:airline_section_warning = ''
+" Have airline expect utf-8 encoding on unix and only display if otherwise
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+" Set a fun theme
+let g:airline_theme='wombat'
+" Show buffers in tabline
+let g:airline#extensions#tabline#enabled = 1
+" f/p/file-name.js
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved' 
 
 """"""""""""""""""""
 " Neomake
@@ -47,14 +66,6 @@ call neomake#configure#automake('nw', 750)
 " Set options for Black formatter
 let g:black_linelength = 79
 
-""""""""""""""""""""
-" Airline
-""""""""""""""""""""
-" Set the options for Airline theme 
-let g:airline_theme='wombat'
-let g:airline#extensions#tabline#enabled = 1
-" f/p/file-name.js
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved' 
 
 """"""""""""""""""""
 " netrw
