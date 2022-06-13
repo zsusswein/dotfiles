@@ -1,7 +1,5 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
-# Brian Bushnell's tools for manipulating reads
-brew "bbtools"
 # Library for command-line editing
 brew "readline"
 # Interpreted, interactive, object-oriented programming language
