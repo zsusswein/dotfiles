@@ -1,17 +1,41 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
+# Brian Bushnell's tools for manipulating reads
+brew "bbtools"
 # Library for command-line editing
 brew "readline"
-# Command-line interface for SQLite
-brew "sqlite"
-# General-purpose data compression with high compression ratio
-brew "xz"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Python code formatter
 brew "black"
+# Portable Foreign Function Interface library
+brew "libffi"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9", link: false
+# Core application library for C
+brew "glib"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# Reimplementation of ctags(1)
+brew "ctags"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GitHub command-line tool
 brew "gh"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Open source relational database management system
+brew "mysql"
+# Platform built on V8 to build network applications
+brew "node"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Friendly PIL fork (Python Imaging Library)
+brew "pillow"
+# Object-relational database system
+brew "postgresql"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Python version management
@@ -20,18 +44,18 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 # It's not just a linter that annoys you!
 brew "pylint"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
-# Tool Command Language
-brew "tcl-tk"
 # Simplified and community-driven man pages
-brew "tldr"
+brew "tldr", link: false
+# Terminal multiplexer
+brew "tmux"
 # Vi 'workalike' with many additional features
 brew "vim"
+# Fast CSV toolkit written in Rust
+brew "xsv"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
 # General-purpose lossless data-compression library
