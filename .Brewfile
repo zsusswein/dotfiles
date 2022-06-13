@@ -8,6 +8,8 @@ brew "gh"
 brew "pre-commit"
 # Python version management
 brew "pyenv"
+# Pyenv plugin to manage virtualenv
+brew "pyenv-virtualenv"
 # It's not just a linter that annoys you!
 brew "pylint"
 # Interpreted, interactive, object-oriented programming language
