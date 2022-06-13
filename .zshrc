@@ -9,7 +9,6 @@ plugins=(git ripgrep python colored-man-pages vi-mode)
 ####################
 
 VI_MODE_SET_CURSOR=true
-
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 ####################
@@ -45,6 +44,23 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+# Do not default to conda environments
+export CONDA_AUTO_ACTIVATE_BASE=false
+
+####################
+# pyenv
+####################
+
+# Installed using Homebrew
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# Sets up shims in $PATH, install autocompletion, rehashes shims, and allows 
+# pyenv to change variables in the current shell
+eval "$(pyenv init -)"
+# Don't allow pip install without being in a venv
+PIP_REQUIRE_VIRTUALENV=true
+# Auto-acivate virtual environments
+eval "$(pyenv virtualenv-init -)"
 
 ####################
 # Aliases
@@ -99,7 +115,6 @@ brew() {
 
     return "$brew_status"
 }
-
 
 # Grep among .py files
 # This overwrites the default zsh python plugin pygrep alias to use ripgrep 
