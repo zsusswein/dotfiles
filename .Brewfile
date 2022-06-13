@@ -6,6 +6,8 @@ brew "black"
 brew "gh"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
+# Python version management
+brew "pyenv"
 # It's not just a linter that annoys you!
 brew "pylint"
 # Interpreted, interactive, object-oriented programming language
