@@ -125,4 +125,8 @@ brew() {
 # instead.
 alias pygrep='rg -n --type py'
 
-
+# Very simple function to save a directory to the variable $mark so that it 
+# can be easily jumped back to
+function mark {
+    export $1=`pwd`;
+}
