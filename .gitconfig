@@ -3,7 +3,8 @@
     # Make rebase safe on OSX
     # https://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
     trustctime = false
-    editor = vim
+    # Use Homebrew vim
+    editor = /usr/local/bin/vim
 
 [user]
     name = Zachary Susswein
