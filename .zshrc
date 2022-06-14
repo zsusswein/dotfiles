@@ -88,7 +88,7 @@ brew() {
     # Save the local conda environment
     local conda_env="$CONDA_DEFAULT_ENV"
     # Include all commands that should do a brew dump
-  local dump_commands=('install' 'uninstall') 
+  local dump_commands=('install' 'uninstall', 'remove') 
   local main_command="${1}"
 
   # Turn off the conda environment
