@@ -9,7 +9,7 @@ brew "black"
 # Portable Foreign Function Interface library
 brew "libffi"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.9", link: false
+brew "python@3.9"
 # Core application library for C
 brew "glib"
 # Manage compile and link flags for libraries
@@ -47,7 +47,7 @@ brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Simplified and community-driven man pages
-brew "tldr", link: false
+brew "tldr"
 # Terminal multiplexer
 brew "tmux"
 # Vi 'workalike' with many additional features
