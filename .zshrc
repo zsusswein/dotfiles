@@ -128,3 +128,4 @@ alias pygrep='rg -n --type py'
 function mark {
     export $1=`pwd`;
 }
+
