@@ -2,8 +2,6 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 # Library for command-line editing
 brew "readline"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # Python code formatter
 brew "black"
 # Portable Foreign Function Interface library
@@ -46,6 +44,8 @@ brew "pylint"
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Pythonic workflow system
+brew "snakemake"
 # Simplified and community-driven man pages
 brew "tldr"
 # Terminal multiplexer
