@@ -17,8 +17,6 @@ brew "pkg-config"
 brew "ctags"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Geospatial Data Abstraction Library
-brew "gdal"
 # GitHub command-line tool
 brew "gh"
 # Generate introspection data for GObject libraries
