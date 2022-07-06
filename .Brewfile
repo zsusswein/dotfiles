@@ -1,4 +1,5 @@
 tap "homebrew/bundle"
+tap "homebrew/cask"
 tap "homebrew/core"
 # Library for command-line editing
 brew "readline"
@@ -16,6 +17,8 @@ brew "pkg-config"
 brew "ctags"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Geospatial Data Abstraction Library
+brew "gdal"
 # GitHub command-line tool
 brew "gh"
 # Generate introspection data for GObject libraries
