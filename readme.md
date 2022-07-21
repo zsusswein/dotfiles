@@ -17,6 +17,7 @@ What this repository contains (for now):
   spellchecking
 - *.Brewfile*: My system dependencies installed through Homebrew
 - *Brewfile.lock.json*: The lockfile associated with the Brewfile
+- *.Rprofile*: An R script auto-sourced when initializing R
 
 I'm not yet totally happy with my settings in the above files. I'm currently 
 running both Homebrew and Anaconda, but they don't play nicely together. I'd 
