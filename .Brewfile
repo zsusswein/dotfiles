@@ -7,16 +7,18 @@ brew "readline"
 brew "black"
 # Portable Foreign Function Interface library
 brew "libffi"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Core application library for C
 brew "glib"
 # Manage compile and link flags for libraries
 brew "pkg-config"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Reimplementation of ctags(1)
 brew "ctags"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Geospatial Data Abstraction Library
+brew "gdal"
 # GitHub command-line tool
 brew "gh"
 # Generate introspection data for GObject libraries
@@ -31,6 +33,8 @@ brew "node"
 brew "openssl@3"
 # Friendly PIL fork (Python Imaging Library)
 brew "pillow"
+# Cross-platform application and UI framework
+brew "qt@5"
 # Object-relational database system
 brew "postgresql"
 # Framework for managing multi-language pre-commit hooks
