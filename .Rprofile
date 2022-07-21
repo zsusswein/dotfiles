@@ -98,8 +98,33 @@ generate_octopus <- function() {
   
 }
 
+## Create invisible environment to hold all your custom functions
+.env <- new.env()
+
+## Single character shortcuts for summary() and head().
+.env$s <- base::summary
+.env$h <- utils::head
+
+#ht==headtail, i.e., show the first and last 10 items of an object.
+.env$ht <- function(d) rbind(head(d,10),tail(d,10))
+
+## Open Finder to the current directory. Mac Only!
+.env$macopen <- function(...) if(Sys.info()[1]=="Darwin") system("open .")
+.env$o       <- function(...) if(Sys.info()[1]=="Darwin") system("open .")
+
+
+## Attach all the variables above
+attach(.env)
+
+## Finally, a function to print out all the functions you have defined in the .Rprofile.
+print.functions <- function(){
+    cat("s() - shortcut for summaryn",sep="")
+    cat("h() - shortcut for headn",sep="")
+    cat("macopen() - open finder to current working directoryn",sep="")
+}
+
 # Clear the default R license stuff
 cat("\014")
-generate_octopus()
 
+generate_octopus()
 
