@@ -98,4 +98,8 @@ generate_octopus <- function() {
   
 }
 
+# Clear the default R license stuff
+cat("\014")
 generate_octopus()
+
+
