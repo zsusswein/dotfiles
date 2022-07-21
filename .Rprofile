@@ -1,4 +1,11 @@
+#########################
+# Insert an ascii octopus with fun coloring on startup.
+# Taken from: 
+# https://gist.github.com/jamesotto852/4ec1070f3256ae32c802f66466894d47 
+#########################
+
 # This function requires the following packages:
+
 #   - crayon
 #   - glue
 #   - stringr
