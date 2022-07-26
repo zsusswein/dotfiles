@@ -60,12 +60,15 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 """"""""""""""""""""
 " Set neomake options for Python so that shows only pylint and not also pep8
 let g:neomake_python_enabled_makers = ['pylint']
-let g:neomake_python_pylint_args = ['--output-format=text', '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg} [{msg_id}]"', '--reports=no', '--good-names=x,y', '--include-naming-hint=y']
+let g:neomake_python_pylint_args = ['--output-format=text',
+            \ '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg} [{msg_id}]"',
+            \'--reports=no',
+            \'--good-names=x,y',
+            \'--include-naming-hint=y']
 " Set options for neomake linting appearance time
 call neomake#configure#automake('nw', 750)
 " Set options for Black formatter
 let g:black_linelength = 79
-
 
 """"""""""""""""""""
 " netrw
@@ -181,7 +184,7 @@ set expandtab
 set autoindent
 
 " Set line length
-set textwidth=78
+set textwidth=80
 set wrap
 set colorcolumn=85
 
@@ -238,4 +241,13 @@ set path+=**
 " And remap standard vim-grep to use ripgrep instead
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --no-heading
 set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+""""""""""""""""""""
+" Formatting
+""""""""""""""""""""
+" Add a Vim header block
+nnoremap <C-v> :center <cr>hhv0r"A<space><esc>40A"<esc>d80<bar>YppVr"kk.
+
+" Add a standard header block
+nnoremap <C-b> :center 80<cr>hhv0r#A<space><esc>40A#<esc>d80<bar>YppVr#kk.
 
