@@ -81,8 +81,8 @@ let g:netrw_banner=0        " disable annoying banner
 let g:netrw_browse_split=4  " open in prior window
 let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+" let g:netrw_list_hide=netrw_gitignore#Hide()
+" let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 """"""""""""""""""""
 " vim-repl
@@ -246,8 +246,8 @@ set grepformat=%f:%l:%c:%m,%f:%l:%m
 " Formatting
 """"""""""""""""""""
 " Add a Vim header block
-nnoremap <C-v> :center <cr>hhv0r"A<space><esc>40A"<esc>d80<bar>YppVr"kk.
+nnoremap <C-v> 0i"<esc><space>O<esc>20i"<esc>jo<esc>20i"<esc>
 
 " Add a standard header block
-nnoremap <C-b> :center 80<cr>hhv0r#A<space><esc>40A#<esc>d80<bar>YppVr#kk.
+nnoremap <C-b> 0i#<esc><space>O<esc>20i#<esc>jo<esc>20i#<esc>
 
