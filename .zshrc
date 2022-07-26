@@ -24,6 +24,7 @@ ENABLE_CORRECTION="true"
 HIST_STAMPS="mm/dd/yyyy"
 source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
+export GIT_EDITOR="vim"
 export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
 
 ####################
@@ -129,3 +130,11 @@ function mark {
     export $1=`pwd`;
 }
 
+sep(){
+    clear;
+    clear;
+    clear;
+    echo "################################################";
+    echo "################################################";
+    clear;
+}
