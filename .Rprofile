@@ -98,6 +98,10 @@ generate_octopus <- function() {
   
 }
 
+# Overwrite the behavior of q() to not save workspace by default.
+q <- function (save="no", ...) {
+  quit(save=save, ...)
+}
 ## Create invisible environment to hold all your custom functions
 .env <- new.env()
 
