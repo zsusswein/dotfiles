@@ -121,9 +121,12 @@ suppressMessages(.env$q <- function (save="no", ...) {
 ## Attach all the variables above
 suppressMessages(attach(.env))
 
-# Sane default print maximum
-options(max.print = 100)
-
+# Sane default print maximum and use a more copy/paste friendly console prompt
+options(
+  max.print = 100,
+  prompt = "R > ",
+  continue = "... "
+)
 
 generate_octopus()
 

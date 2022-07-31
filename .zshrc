@@ -140,5 +140,7 @@ sep(){
     clear;
 }
 
-alias R='R --quiet'
+# When opening R, don't print the license and version nonsense, don't save the 
+# session, and don't restore data from the previous session
+alias R='R --quiet --no-save --no-restore-data'
 
