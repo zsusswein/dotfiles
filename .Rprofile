@@ -13,7 +13,7 @@
 generate_octopus <- function() {
   
   # Initialize art, split by newlines ---------------------------------------
-  octopus_ascii <- "                        ___\n                     .-'   `'.\n                    /         \\\n                    |         ;\n                    |         |           ___.--,\n           _.._     |0) ~ (0) |    _.---'`__.-( (_.\n    __.--'`_.. '.__.\\    '--. \\_.-' ,.--'`     `\"\"`\n   ( ,.--'`   ',__ /./;   ;, '.__.'`    __\n   _`) )  .---.__.' / |   |\\   \\__..--\"\"  \"\"\"--.,_\n  `---' .'.''-._.-'`_./  /\\ '.  \\ _.-~~~````~~~-._`-.__.'\n        | |  .' _.-' |  |  \\  \\  '.               `~---`\n         \\ \\/ .'     \\  \\   '. '-._)\n          \\/ /        \\  \\    `=.__`~-.\n          / /\\         `) )    / / `\"\".`\\\n    , _.-'.'\\ \\        / /    ( (     / /\n     `--~`   ) )    .-'.'      '.'.  | (\n            (/`    ( (`          ) )  '-;\n             `      '-;         (-'"
+  octopus_ascii <- "                        ___\n                     .-'   `'.\n                    /         \\\n                    |         ;\n                    |         |           ___.--,\n           _.._     |0) ~ (0) |    _.---'`__.-( (_.\n    __.--'`_.. '.__.\\    '--. \\_.-' ,.--'`     `\"\"`\n   ( ,.--'`   ',__ /./;   ;, '.__.'`    __\n   _`) )  .---.__.' / |   |\\   \\__..--\"\"  \"\"\"--.,_\n  `---' .'.''-._.-'`_./  /\\ '.  \\ _.-~~~````~~~-._`-.__.'\n        | |  .' _.-' |  |  \\  \\  '.               `~---`\n         \\ \\/ .'     \\  \\   '. '-._)\n          \\/ /        \\  \\    `=.__`~-.\n          / /\\         `) )    / / `\"\".`\\\n    , _.-'.'\\ \\        / /    ( (     / /\n     `--~`   ) )    .-'.'      '.'.  | (\n            (/`    ( (`          ) )  '-;\n             `      '-;         (-' \n \n"
   octopus_ascii <- stringr::str_split(octopus_ascii, "\\n")[[1]]
   
   
@@ -98,12 +98,14 @@ generate_octopus <- function() {
   
 }
 
-# Overwrite the behavior of q() to not save workspace by default.
-q <- function (save="no", ...) {
-  quit(save=save, ...)
-}
 ## Create invisible environment to hold all your custom functions
 .env <- new.env()
+
+
+# Overwrite the behavior of q() to not save workspace by default.
+suppressMessages(.env$q <- function (save="no", ...) {
+  quit(save=save, ...)
+})
 
 ## Single character shortcuts for summary() and head().
 .env$s <- base::summary
@@ -116,19 +118,12 @@ q <- function (save="no", ...) {
 .env$macopen <- function(...) if(Sys.info()[1]=="Darwin") system("open .")
 .env$o       <- function(...) if(Sys.info()[1]=="Darwin") system("open .")
 
-
 ## Attach all the variables above
-attach(.env)
+suppressMessages(attach(.env))
 
-## Finally, a function to print out all the functions you have defined in the .Rprofile.
-print.functions <- function(){
-    cat("s() - shortcut for summaryn",sep="")
-    cat("h() - shortcut for headn",sep="")
-    cat("macopen() - open finder to current working directoryn",sep="")
-}
+# Sane default print maximum
+options(max.print = 100)
 
-# Clear the default R license stuff
-cat("\014")
 
 generate_octopus()
 
