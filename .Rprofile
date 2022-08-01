@@ -4,13 +4,16 @@
 # https://gist.github.com/jamesotto852/4ec1070f3256ae32c802f66466894d47 
 #########################
 
+## Create invisible environment to hold all your custom functions
+.env <- new.env()
+
 # This function requires the following packages:
 
 #   - crayon
 #   - glue
 #   - stringr
 
-generate_octopus <- function() {
+.env$generate_octopus <- function() {
   
   # Initialize art, split by newlines ---------------------------------------
   octopus_ascii <- "                        ___\n                     .-'   `'.\n                    /         \\\n                    |         ;\n                    |         |           ___.--,\n           _.._     |0) ~ (0) |    _.---'`__.-( (_.\n    __.--'`_.. '.__.\\    '--. \\_.-' ,.--'`     `\"\"`\n   ( ,.--'`   ',__ /./;   ;, '.__.'`    __\n   _`) )  .---.__.' / |   |\\   \\__..--\"\"  \"\"\"--.,_\n  `---' .'.''-._.-'`_./  /\\ '.  \\ _.-~~~````~~~-._`-.__.'\n        | |  .' _.-' |  |  \\  \\  '.               `~---`\n         \\ \\/ .'     \\  \\   '. '-._)\n          \\/ /        \\  \\    `=.__`~-.\n          / /\\         `) )    / / `\"\".`\\\n    , _.-'.'\\ \\        / /    ( (     / /\n     `--~`   ) )    .-'.'      '.'.  | (\n            (/`    ( (`          ) )  '-;\n             `      '-;         (-' \n \n"
@@ -98,10 +101,6 @@ generate_octopus <- function() {
   
 }
 
-## Create invisible environment to hold all your custom functions
-.env <- new.env()
-
-
 # Overwrite the behavior of q() to not save workspace by default.
 suppressMessages(.env$q <- function (save="no", ...) {
   quit(save=save, ...)
@@ -118,6 +117,7 @@ suppressMessages(.env$q <- function (save="no", ...) {
 .env$macopen <- function(...) if(Sys.info()[1]=="Darwin") system("open .")
 .env$o       <- function(...) if(Sys.info()[1]=="Darwin") system("open .")
 
+
 ## Attach all the variables above
 suppressMessages(attach(.env))
 
@@ -125,8 +125,8 @@ suppressMessages(attach(.env))
 options(
   max.print = 100,
   prompt = "R > ",
-  continue = "... "
+  continue = " "
 )
 
-generate_octopus()
+.env$generate_octopus()
 
