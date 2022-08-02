@@ -15,6 +15,8 @@ brew "pkg-config"
 brew "python@3.9"
 # Reimplementation of ctags(1)
 brew "ctags"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Geospatial Data Abstraction Library
