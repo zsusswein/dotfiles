@@ -1,4 +1,5 @@
 tap "homebrew/bundle"
+tap "homebrew/cask"
 tap "homebrew/core"
 # Library for command-line editing
 brew "readline"
@@ -22,12 +23,14 @@ brew "pyenv-virtualenv"
 brew "pylint"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
+# Tool Command Language
+brew "tcl-tk"
+# Python interface to Tcl/Tk
+brew "python-tk@3.9"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
-# Tool Command Language
-brew "tcl-tk"
 # Simplified and community-driven man pages
 brew "tldr"
 # Vi 'workalike' with many additional features
