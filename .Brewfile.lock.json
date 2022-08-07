@@ -1509,6 +1509,14 @@
           }
         }
       }
+    },
+    "cask": {
+      "iterm2": {
+        "version": "3.4.16",
+        "options": {
+          "full_name": "iterm2"
+        }
+      }
     }
   },
   "system": {

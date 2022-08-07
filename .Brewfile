@@ -41,3 +41,5 @@ brew "wireguard-tools"
 brew "youtube-dl"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
