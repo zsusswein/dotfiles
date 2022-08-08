@@ -9,6 +9,8 @@ brew "sqlite"
 brew "xz"
 # Python code formatter
 brew "black"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # GitHub command-line tool
 brew "gh"
 # Cryptography and SSL/TLS Toolkit
