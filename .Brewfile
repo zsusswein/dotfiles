@@ -15,10 +15,22 @@ brew "pkg-config"
 brew "python@3.9"
 # Reimplementation of ctags(1)
 brew "ctags"
+# Embeddable SQL OLAP Database Management System
+brew "duckdb"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Geometry Engine
+brew "geos"
+# File format designed to store large amounts of data
+brew "hdf5"
+# Cartographic Projections Library
+brew "proj"
+# Libraries and data formats for array-oriented scientific data
+brew "netcdf"
+# Package for scientific computing with Python
+brew "numpy"
 # Geospatial Data Abstraction Library
 brew "gdal"
 # GitHub command-line tool
@@ -27,6 +39,10 @@ brew "gh"
 brew "gobject-introspection"
 # OpenType text shaping engine
 brew "harfbuzz"
+# File format designed to store large amounts of data
+brew "hdf5@1.10"
+# General-purpose lossless data-compression library
+brew "zlib"
 # Open source relational database management system
 brew "mysql"
 # Platform built on V8 to build network applications
@@ -37,6 +53,8 @@ brew "openssl@3"
 brew "pillow"
 # Cross-platform application and UI framework
 brew "qt@5"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler-qt5"
 # Object-relational database system
 brew "postgresql"
 # Framework for managing multi-language pre-commit hooks
@@ -63,5 +81,3 @@ brew "vim"
 brew "xsv"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
-# General-purpose lossless data-compression library
-brew "zlib"
