@@ -13,6 +13,8 @@ brew "glib"
 brew "pkg-config"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
+# Suite of command-line tools for converting to and working with CSV
+brew "csvkit"
 # Reimplementation of ctags(1)
 brew "ctags"
 # Embeddable SQL OLAP Database Management System
