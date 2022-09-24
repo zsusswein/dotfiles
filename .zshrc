@@ -144,3 +144,9 @@ sep(){
 # session, and don't restore data from the previous session
 alias R='R --quiet --no-save --no-restore-data'
 
+# Kill all running Databricks cluster
+killclust(){
+ databricks clusters list | rg --invert-match 'TERMINATED' | awk '{print $1}' | for i in "$(cat)" ;  do databricks clusters delete --cluster-id $i || echo "No clusters running"; done
+}
+
+
