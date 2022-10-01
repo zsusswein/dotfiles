@@ -7,8 +7,12 @@ brew "readline"
 brew "sqlite"
 # General-purpose data compression with high compression ratio
 brew "xz"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Python code formatter
 brew "black"
+# Embeddable SQL OLAP Database Management System
+brew "duckdb"
 # GitHub command-line tool
 brew "gh"
 # Cryptography and SSL/TLS Toolkit
