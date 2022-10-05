@@ -13,6 +13,8 @@ brew "python@3.10"
 brew "black"
 # Embeddable SQL OLAP Database Management System
 brew "duckdb"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # GitHub command-line tool
 brew "gh"
 # Cryptography and SSL/TLS Toolkit
