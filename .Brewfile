@@ -49,6 +49,8 @@ brew "zlib"
 brew "mysql"
 # Platform built on V8 to build network applications
 brew "node"
+# General purpose programming language in the ML family
+brew "ocaml"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Friendly PIL fork (Python Imaging Library)
