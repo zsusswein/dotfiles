@@ -4,7 +4,7 @@
     # https://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
     trustctime = false
     # Use Homebrew vim
-    editor = /opt/homebrew/bin/vim
+    editor = /usr/local/bin/vim
 
 [user]
     name = Zachary Susswein
