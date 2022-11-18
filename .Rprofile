@@ -125,7 +125,8 @@ suppressMessages(attach(.env))
 options(
   max.print = 100,
   prompt = "R > ",
-  continue = " "
+  continue = " ",
+  repos = structure(c(CRAN="https://cran.case.edu/"))
 )
 
 .env$generate_octopus()
