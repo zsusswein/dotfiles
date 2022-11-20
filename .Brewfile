@@ -7,8 +7,6 @@ brew "readline"
 brew "sqlite"
 # General-purpose data compression with high compression ratio
 brew "xz"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # Python code formatter
 brew "black"
 # Embeddable SQL OLAP Database Management System
@@ -17,8 +15,12 @@ brew "duckdb"
 brew "fd"
 # GitHub command-line tool
 brew "gh"
+# Git extension for versioning large files
+brew "git-lfs"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Python version management
