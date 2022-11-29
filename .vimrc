@@ -184,7 +184,7 @@ set expandtab
 set autoindent
 
 " Set line length
-set textwidth=80
+set textwidth=120
 set wrap
 set colorcolumn=85
 
