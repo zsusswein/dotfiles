@@ -27,6 +27,8 @@ export EDITOR='vim'
 export GIT_EDITOR="vim"
 export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
 export PYTHONPATH=$PYTHONPATH:/"$HOME"/anaconda3/lib/python3.5/site-packages
+# Adds `poetry` to $PATH
+export PATH="/Users/zsusswein/.local/bin:$PATH"
 
 ####################
 # Conda

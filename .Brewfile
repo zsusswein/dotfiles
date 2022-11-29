@@ -1,18 +1,14 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-# Library for command-line editing
-brew "readline"
 # Command-line interface for SQLite
 brew "sqlite"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Python code formatter
 brew "black"
-# Portable Foreign Function Interface library
-brew "libffi"
 # Core application library for C
 brew "glib"
+# Portable Foreign Function Interface library
+brew "libffi"
 # Manage compile and link flags for libraries
 brew "pkg-config"
 # Interpreted, interactive, object-oriented programming language
@@ -23,6 +19,8 @@ brew "csvkit"
 brew "ctags"
 # Embeddable SQL OLAP Database Management System
 brew "duckdb"
+# Spellchecker wrapping library
+brew "enchant"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Command-line fuzzy finder written in Go
@@ -37,6 +35,8 @@ brew "proj"
 brew "netcdf"
 # Package for scientific computing with Python
 brew "numpy"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Geospatial Data Abstraction Library
 brew "gdal"
 # GitHub command-line tool
@@ -57,6 +57,8 @@ brew "node"
 brew "ocaml"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Tool Command Language
+brew "tcl-tk"
 # Friendly PIL fork (Python Imaging Library)
 brew "pillow"
 # Cross-platform application and UI framework
@@ -64,12 +66,7 @@ brew "qt@5"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler-qt5"
 # Object-relational database system
-brew "postgresql"
-# GitHub command-line tool
-brew "gh"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
->>>>>>> deba35c2925c6e3decf686c9e17a8cfb6fca5542
+brew "postgresql@14"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Python version management
@@ -78,23 +75,25 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 # It's not just a linter that annoys you!
 brew "pylint"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
-# Tool Command Language
-brew "tcl-tk"
+# Pythonic workflow system
+brew "snakemake"
 # Simplified and community-driven man pages
 brew "tldr"
+# Terminal multiplexer
+brew "tmux"
 # Vi 'workalike' with many additional features
 brew "vim"
+# Internet file retriever
+brew "wget"
 # Tools for the WireGuard secure network tunnel
 brew "wireguard-tools"
+# Fast CSV toolkit written in Rust
+brew "xsv"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
-# General-purpose lossless data-compression library
-brew "zlib"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
