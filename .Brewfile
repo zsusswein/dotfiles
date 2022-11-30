@@ -41,6 +41,8 @@ brew "poppler"
 brew "gdal"
 # GitHub command-line tool
 brew "gh"
+# Git extension for versioning large files
+brew "git-lfs"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # OpenType text shaping engine
