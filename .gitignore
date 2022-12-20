@@ -11,6 +11,7 @@
 .Ruserdata
 ./*.Rcheck/
 .Renviron
+Rplots.pdf
 
 # Mac specific-files
 .DS_Store
@@ -36,6 +37,13 @@ Session.vim
 
 # Don't track SQL databases
 *.db
+*.duckdb
 
 # Logging should be ignored
 */log/
+
+# Use a gitkeep to keep otherwise-empty directories
+!/**/.gitkeep
+
+# And keep READMEs regardless of where they are
+!/**/readme.md
