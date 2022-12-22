@@ -39,3 +39,6 @@ Session.vim
 
 # Logging should be ignored
 */log/
+
+# OS X folder icon
+Icon\r\r
