@@ -43,9 +43,8 @@ Session.vim
 # Logging should be ignored
 */log/
 
-# OS X folder icon
-
 # Use a gitkeep to keep otherwise-empty directories
 !/**/.gitkeep
+
 # And keep READMEs regardless of where they are
 !/**/readme.md

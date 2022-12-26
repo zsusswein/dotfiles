@@ -157,5 +157,4 @@ killclust(){
  databricks clusters list | rg --invert-match 'TERMINATED' | awk '{print $1}' | for i in "$(cat)" ;  do databricks clusters delete --cluster-id $i || echo "No clusters running"; done
 }
 
-
-
+source /Users/zsusswein/.docker/init-zsh.sh || true # Added by Docker Desktop
