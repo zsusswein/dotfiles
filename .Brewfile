@@ -19,8 +19,6 @@ brew "gh"
 brew "git-lfs"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Python version management
@@ -30,15 +28,21 @@ brew "pyenv-virtualenv"
 # It's not just a linter that annoys you!
 brew "pylint"
 # Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Extremely fast Python linter, written in Rust
+brew "ruff"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Tool Command Language
 brew "tcl-tk"
 # Simplified and community-driven man pages
 brew "tldr"
+# Terminal multiplexer
+brew "tmux"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Tools for the WireGuard secure network tunnel
