@@ -261,7 +261,7 @@ set grepformat=%f:%l:%c:%m,%f:%l:%m
 " Formatting
 """"""""""""""""""""
 " Add a Vim header block
-nnoremap <C-v> <esc>0o<esc>020i"<esc>0o<esc>i"<esc>0o<esc>019i"<esc>0o<esc>2k$a<space>
+nnoremap <leader><C-v> <esc>0o<esc>020i"<esc>0o<esc>i"<esc>0o<esc>019i"<esc>0o<esc>2k$a<space>
 
 " Add a standard header block
 nnoremap <C-b> 0i#<esc><space>O<esc>20i#<esc>jo<esc>20i#<esc>
