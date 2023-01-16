@@ -105,6 +105,9 @@ let g:jedi#show_call_signatures = "1" " Show function call signature in a popup
 " Miscellaneous
 """"""""""""""""""""
 
+" Show leading tabs and whitespace
+set list lcs=trail:·,tab:»·
+
 " Display all matching files when tab completing
 set wildmenu
 
@@ -195,7 +198,6 @@ endif
 
 " Prevent wrapping from breaking words
 set linebreak
-set nolist
 
 " Highlight right margin (>80 chars) in light grey 
 highlight ColorColumn ctermbg=235
