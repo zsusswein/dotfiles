@@ -1,6 +1,8 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "homebrew/services"
+tap "oktadeveloper/tap"
 # Command-line interface for SQLite
 brew "sqlite"
 # Python code formatter
@@ -36,9 +38,9 @@ brew "netcdf"
 # Package for scientific computing with Python
 brew "numpy"
 # PDF rendering library (based on the xpdf-3.0 code base)
-brew "poppler"
+brew "poppler", link: false
 # Geospatial Data Abstraction Library
-brew "gdal"
+brew "gdal", link: false
 # GitHub command-line tool
 brew "gh"
 # Git extension for versioning large files
@@ -99,3 +101,6 @@ brew "xsv"
 brew "youtube-dl"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Full TeX Live distribution with GUI applications
+cask "mactex"
+cask "okta"
