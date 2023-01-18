@@ -31,6 +31,7 @@ Plug 'sillybun/vim-repl'
 Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-surround' 
 Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -97,6 +98,12 @@ let g:repl_program = {
 """"""""""""""""""""
 let g:jedi#show_call_signatures = "1" " Show function call signature in a popup
 
+""""""""""""""""""""
+" vim-tmux-navigator
+""""""""""""""""""""
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " General settings
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -120,11 +127,20 @@ set encoding=utf-8
 " Don't be vi compatible
 set nocompatible
 
+" Disable the default Vim startup message.
+set shortmess+=I
+
+" Hide buffers with unsaved changes rather than forgetting about them and reloading
+set hidden
+
 " Turn off audio bell and set as visual
 set visualbell
 
 " more powerful backspacing
 set backspace=indent,eol,start  
+
+" Unbind some useless/annoying default key bindings.
+nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 
 " Set files with ".md" extension to be of type markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
@@ -207,9 +223,8 @@ let &colorcolumn=join(range(85,999),",")
 " automatically, but not including the comment leader when hitting enter or 'o'
 " in normal mode. Also, allow for automatic list formatting.
 " http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
-
-set fo=tcqwan1
-set fo-=cro
+set fo=tcqwn1c
+set fo-=roa
 
 """"""""""""""""""""
 " Search
@@ -248,7 +263,7 @@ set grepformat=%f:%l:%c:%m,%f:%l:%m
 " Formatting
 """"""""""""""""""""
 " Add a Vim header block
-nnoremap <C-v> 0i"<esc><space>O<esc>20i"<esc>jo<esc>20i"<esc>
+nnoremap <leader><C-v> <esc>0o<esc>020i"<esc>0o<esc>i"<esc>0o<esc>019i"<esc>0o<esc>2k$a<space>
 
 " Add a standard header block
 nnoremap <C-b> 0i#<esc><space>O<esc>20i#<esc>jo<esc>20i#<esc>

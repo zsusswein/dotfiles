@@ -5,6 +5,11 @@ tap "homebrew/services"
 tap "oktadeveloper/tap"
 # Command-line interface for SQLite
 brew "sqlite"
+<<<<<<< HEAD
+# General-purpose data compression with high compression ratio
+brew "xz"
+=======
+>>>>>>> eb4af734b229df2336b4b9c2015fcd99262868ed
 # Python code formatter
 brew "black"
 # Core application library for C
@@ -45,6 +50,8 @@ brew "gdal", link: false
 brew "gh"
 # Git extension for versioning large files
 brew "git-lfs"
+<<<<<<< HEAD
+=======
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # OpenType text shaping engine
@@ -59,6 +66,7 @@ brew "mysql"
 brew "node"
 # General purpose programming language in the ML family
 brew "ocaml"
+>>>>>>> eb4af734b229df2336b4b9c2015fcd99262868ed
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Tool Command Language
@@ -79,8 +87,17 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 # It's not just a linter that annoys you!
 brew "pylint"
+<<<<<<< HEAD
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+=======
+>>>>>>> eb4af734b229df2336b4b9c2015fcd99262868ed
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Extremely fast Python linter, written in Rust
+brew "ruff"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Pythonic workflow system

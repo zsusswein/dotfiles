@@ -15,6 +15,7 @@ Rplots.pdf
 
 # Mac specific-files
 .DS_Store
+Icon\r\r
 
 # Don't save OAuth tokens
 .httr-oauth
