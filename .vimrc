@@ -112,6 +112,9 @@ let g:tmux_navigator_save_on_switch = 2
 " Miscellaneous
 """"""""""""""""""""
 
+" Show leading tabs and whitespace
+set list lcs=trail:·,tab:»·
+
 " Display all matching files when tab completing
 set wildmenu
 
@@ -211,7 +214,6 @@ endif
 
 " Prevent wrapping from breaking words
 set linebreak
-set nolist
 
 " Highlight right margin (>80 chars) in light grey 
 highlight ColorColumn ctermbg=235

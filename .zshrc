@@ -88,7 +88,6 @@ alias lt='ls -lAtuhG'
 # Alias to commit spellfile with newly added words
 alias dotspell='dot add ~/.vim-spell-en.utf-8.add; dot commit -m "Update spellfile with new words"'
 
-
 # Deactivates conda before running brew.  Re-activates conda if it was active 
 # upon completion.
 # Conda plays poorly with brew and brew doctor complains if in a conda
@@ -128,6 +127,7 @@ alias dotspell='dot add ~/.vim-spell-en.utf-8.add; dot commit -m "Update spellfi
 #    return "$brew_status"
 #}
 #
+
 # Grep among .py files
 # This overwrites the default zsh python plugin pygrep alias to use ripgrep 
 # instead.
@@ -156,5 +156,3 @@ alias R='R --quiet --no-save --no-restore-data'
 killclust(){
  databricks clusters list | rg --invert-match 'TERMINATED' | awk '{print $1}' | for i in "$(cat)" ;  do databricks clusters delete --cluster-id $i || echo "No clusters running"; done
 }
-
-source /Users/zsusswein/.docker/init-zsh.sh || true # Added by Docker Desktop
