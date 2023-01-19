@@ -88,46 +88,6 @@ alias lt='ls -lAtuhG'
 # Alias to commit spellfile with newly added words
 alias dotspell='dot add ~/.vim-spell-en.utf-8.add; dot commit -m "Update spellfile with new words"'
 
-# Deactivates conda before running brew.  Re-activates conda if it was active 
-# upon completion.
-# Conda plays poorly with brew and brew doctor complains if in a conda
-# environment. Also sets brew to automatically update the Brewfile 
-# and commit the changes upon installing or uninstalling.
-#brew() {
-#    # Save the local conda environment
-#    local conda_env="$CONDA_DEFAULT_ENV"
-#    # Include all commands that should do a brew dump
-#  local dump_commands=('install' 'uninstall', 'remove') 
-#  local main_command="${1}"
-#
-#    # Turn off the pyenv environment
-#    command pyenv shell system
-#  # Turn off the conda environment
-#    while [ "$CONDA_SHLVL" -gt 0  ]; do
-#        conda deactivate
-#    done
-#
-#    command brew $@
-#
-#    local brew_status=$?
-#
-#    # If necessary, brew bundle dump and commit the changes
-#  for command in "${dump_commands[@]}"; do
-#    [[ "${command}" == "${main_command}" ]] && \
-#     brew bundle dump --force --describe && \
-#     brew bundle --force && \
-#    dot add "$HOMEBREW_BUNDLE_FILE" && \
-#    dot add "$HOMEBREW_BUNDLE_FILE.lock.json" && \
-#    dot commit 
-#  done
-#
-#  # Turn the conda environment back on
-#    [ -n "${conda_env:+x}" ] && conda activate "$conda_env"
-#
-#    return "$brew_status"
-#}
-#
-
 # Grep among .py files
 # This overwrites the default zsh python plugin pygrep alias to use ripgrep 
 # instead.
