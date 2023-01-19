@@ -24,7 +24,6 @@ ENABLE_CORRECTION="true"
 HIST_STAMPS="mm/dd/yyyy"
 source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
-export GIT_EDITOR="vim"
 export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
 export PYTHONPATH=$PYTHONPATH:/"$HOME"/anaconda3/lib/python3.5/site-packages
 # Adds `poetry` to $PATH
@@ -67,19 +66,19 @@ PIP_REQUIRE_VIRTUALENV=true
 eval "$(pyenv virtualenv-init -)"
 
 ####################
-# Docker
+# Git
 ####################
 
-source /Users/zsusswein/.docker/init-zsh.sh || true # Added by Docker Desktop
-
-####################
-# Aliases
-####################
-
+export GPG_TTY=$(tty) # For GPG signing key
+export GIT_EDITOR="vim"
 # Set up dotfiles to be tracked in a bare Github repository called dotfiles
 # Follows from this tutorial: https://www.atlassian.com/git/tutorials/dotfiles
 alias dotfiles='/usr/bin/git --git-dir=/Users/zsusswein/.mydotfiles/ --work-tree=/Users/zsusswein'
 alias dot='/usr/bin/git --git-dir=/Users/zsusswein/.mydotfiles/ --work-tree=/Users/zsusswein'
+
+####################
+# Aliases
+####################
 
 # Alias a long form version of ls to use human readable units and be sorted by
 # the date most recently accessed

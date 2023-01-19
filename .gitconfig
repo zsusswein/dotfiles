@@ -62,3 +62,5 @@
 [include]
     # Look for local (non-publicly version controlled) gpg signing key
 	path = ~/.gitconfig-local
+[commit]
+	gpgsign = true
