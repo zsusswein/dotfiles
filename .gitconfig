@@ -59,3 +59,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[include]
+    # Look for local (non-publicly version controlled) gpg signing key
+	path = ~/.gitconfig-local
+[commit]
+	gpgsign = true
