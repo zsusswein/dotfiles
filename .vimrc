@@ -156,10 +156,15 @@ let g:pymode_python = 'python3'
 set spell spelllang=en_us
 
 " Specify colors for spellcheck
-highlight SpellBad ctermbg=001 " Dark red
-highlight SpellRare ctermbg=140  " Light purple
-highlight SpellLocal ctermbg=068 " Light blue 
-highlight SpellCap ctermbg=102 " Dark grey 
+highlight clear SpellBad
+highlight clear SpellRare
+highlight clear SpellLocal
+highlight clear SpellCap
+
+highlight SpellBad cterm=underline
+highlight SpellBad ctermfg=160 " Dark red
+highlight SpellCap  cterm=underline
+highlight SpellCap ctermfg=102 " Dark grey 
 
 " Map Leader-L to go back to last misspelled word and pick first suggestion.
 " But set an undo marker so that hitting `u` will undo the word and jump back
