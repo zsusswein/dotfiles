@@ -35,6 +35,8 @@
 
 [pull]
     ff = only
+    # https://cscheng.info/2017/01/26/git-tip-autostash-with-git-pull-rebase.html
+	rebase = true
 
 [branch]
     # Show the most recently changed branches first.
@@ -64,3 +66,6 @@
 	path = ~/.gitconfig-local
 [commit]
 	gpgsign = true
+[rebase]
+    # https://cscheng.info/2017/01/26/git-tip-autostash-with-git-pull-rebase.html
+	autostash = true
