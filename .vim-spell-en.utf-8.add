@@ -104,3 +104,6 @@ parms
 heath/!
 pubic/!
 config
+GZIP
+VARCHAR
+pango
